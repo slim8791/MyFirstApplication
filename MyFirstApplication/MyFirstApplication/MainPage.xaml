@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MyFirstApplication"
+             x:Class="MyFirstApplication.MainPage"
+             
+            >
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0,20,0,0"></On>
+            <On Platform="Android" Value="0,0,0,0"></On>
+            <On Platform="UWP" Value="0,0,0,0"></On>
+
+        </OnPlatform>
+
+    </ContentPage.Padding>
+    <!--<ContentPage.BackgroundColor>
+        <OnPlatform x:TypeArguments="Color">
+            <On Platform="iOS" Value="Red"></On>
+            <On Platform="Android" Value="Blue"></On>
+            <On Platform="UWP" Value="Yellow"></On>
+
+        </OnPlatform>
+    </ContentPage.BackgroundColor>-->
+    <ContentPage.Content>
+        <StackLayout   BindingContext="{Binding Source={x:Reference slider}}"
+                      VerticalOptions="CenterAndExpand">
+        <!-- Place new controls here -->
+            <!--Opacity="{Binding Value}"-->
+
+            <Label
+                Text="{Binding Value, StringFormat='Value is {0:F2} '}" 
+                   x:Name="label"   
+    	       HorizontalOptions="CenterAndExpand"
+           />
+            <!--<BoxView Color="Chocolate" Opacity="{Binding Value}"></BoxView>-->
+            <Slider x:Name="slider" Maximum="29"  Minimum="10"/>
+            <!--ValueChanged="Slider_OnValueChanged"-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

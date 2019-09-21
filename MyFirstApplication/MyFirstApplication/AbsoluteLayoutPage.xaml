@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyFirstApplication.AbsoluteLayoutPage">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <BoxView Color="Cyan" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" ></BoxView>
+            <BoxView Color="White" AbsoluteLayout.LayoutBounds="0.5,0.1,100,100" AbsoluteLayout.LayoutFlags="PositionProportional" ></BoxView>
+            <Button Text="Click Me ! " Clicked="Button_OnClicked" AbsoluteLayout.LayoutBounds="0,1,1,50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"></Button>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
