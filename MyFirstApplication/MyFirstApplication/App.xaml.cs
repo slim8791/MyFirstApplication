@@ -11,7 +11,8 @@ namespace MyFirstApplication
 		{
 			InitializeComponent();
 
-			MainPage = new AbsoluteLayoutPage();
+			MainPage = new NavigationPage(new AbsoluteLayoutPage()); 
+           
 		}
 
 		protected override void OnStart ()

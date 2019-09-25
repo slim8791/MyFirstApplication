@@ -10,18 +10,18 @@ using Xamarin.Forms.Xaml;
 namespace MyFirstApplication
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class AbsoluteLayoutPage : ContentPage
+	public partial class WelcomePage : ContentPage
 	{
-		public AbsoluteLayoutPage ()
+		public WelcomePage ()
 		{
 			InitializeComponent ();
 		}
 
 	    private void Button_OnClicked(object sender, EventArgs e)
 	    {
-            //DisplayAlert("TEK-UP", "Hello world !! ","OK");
-            Navigation.PushAsync(new WelcomePage());
-            //Navigation.PushModalAsync(new WelcomePage());
+
+            Navigation.PopAsync();
+            //Navigation.PopModalAsync();
         }
 	}
 }
