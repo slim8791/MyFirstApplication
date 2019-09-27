@@ -6,5 +6,8 @@ namespace MyFirstApplication
 {
     public class MasterDetailItem
     {
+        public string IconSource { get; set; }
+        public string Title { get; set; }
+        public Type TargetType { get; set; }
     }
 }

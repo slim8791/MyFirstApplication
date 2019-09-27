@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyFirstApplication.Composants">
+    <ContentPage.Content>
+        <StackLayout>
+            <Switch IsToggled="False" x:Name="switch" Toggled="Switch_OnToggled"></Switch>
+            <Label Text="Is it toggled ?" IsVisible="{Binding Source={x:Reference switch} , Path=IsToggled}" FontSize="27"></Label>
+           <Stepper Increment="5" x:Name="stepper"></Stepper>
+            <Label Text="{Binding Source={x:Reference stepper}, Path=Value}"></Label>
+           <Entry Keyboard="Plain" Placeholder="Tap here ..." ></Entry>
+            <Picker Title="Select..." >
+                <Picker.Items>
+                    <x:String>None</x:String>
+                    <x:String>Email</x:String>
+                    <x:String>SMS</x:String>
+
+                </Picker.Items>
+            </Picker>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

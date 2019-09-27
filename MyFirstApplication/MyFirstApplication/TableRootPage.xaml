@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
+             xmlns:extensions="clr-namespace:MyFirstApplication.Extensions;assembly=MyFirstApplication"
+             x:Class="MyFirstApplication.TableRootPage">
+    <ContentPage.Content>
+        <TableView>
+            <TableRoot>
+                <TableSection Title="Basics">
+                    <TextCell Text="Name" Detail="Slim HAMMAMI"></TextCell>
+                    <EntryCell Text="Title" Placeholder="Tap here..."></EntryCell>
+                    <SwitchCell Text="Notification" On="True"></SwitchCell>
+                </TableSection>
+                <TableSection Title="Date">
+                    <!--<ViewCell >
+                        <StackLayout Orientation="Horizontal" Padding="13,0">
+                            <Label Text="Starts" VerticalOptions="Center"></Label>
+                            <DatePicker Date="{x:Static system:DateTime.Today}" HorizontalOptions="EndAndExpand"></DatePicker>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell >
+                        <StackLayout Orientation="Horizontal" Padding="13,0">
+                            <Label Text="Ends" VerticalOptions="Center"></Label>
+                            <DatePicker Date="{x:Static system:DateTime.Today}" HorizontalOptions="EndAndExpand"></DatePicker>
+                        </StackLayout>
+                    </ViewCell>-->
+                    <extensions:DateCell TextEntered="Starts"/>
+                    <extensions:DateCell TextEntered="Ends"/>
+
+
+                    <ViewCell Tapped="Cell_OnTapped">
+                        <StackLayout Orientation="Horizontal" Padding="13,5">
+                            <Label Text="Contact Method" VerticalOptions="Center"></Label>
+                            <Label x:Name="contactMethodValue"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="EndAndExpand"
+                                   Text="None"
+                                   TextColor="Gray"></Label>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </ContentPage.Content>
+</ContentPage>

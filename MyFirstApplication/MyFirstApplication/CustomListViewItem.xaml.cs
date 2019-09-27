@@ -41,8 +41,12 @@ namespace MyFirstApplication
 	    {
 
 	        var employe = e.Item as Employe;
-	        var response = await DisplayAlert(employe.Nom + " tapped ", employe.Poste, "Ok", "Cancel ");
-        }
+            //var response = await DisplayAlert(employe.Nom + " tapped ", employe.Poste, "Ok", "Cancel ");
+            //var page = new EmployeInfo(employe);
+	        var page = new EmployeInfo();
+	        page.BindingContext = employe;
+            await Navigation.PushAsync(page);
+	    }
 
 	    private void MenuItem_OnClicked(object sender, EventArgs e)
 	    {
@@ -70,8 +74,9 @@ namespace MyFirstApplication
 
                 } };
 	    }
+        
 
-	    private void ListView_OnRefreshing(object sender, EventArgs e)
+        private void ListView_OnRefreshing(object sender, EventArgs e)
 	    {
 
 	        var list = GetList();
@@ -94,5 +99,7 @@ namespace MyFirstApplication
 	        var newList = new ObservableCollection<Employe>(list);
 	        listView.ItemsSource = newList;
         }
+
+	 
 	}
 }

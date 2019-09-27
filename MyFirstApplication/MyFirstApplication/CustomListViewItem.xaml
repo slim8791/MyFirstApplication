@@ -6,27 +6,26 @@
     <ContentPage.Content>
         <StackLayout>
             <!--TextChanged="SearchBar_OnTextChanged"-->
-<SearchBar x:Name="searchBar" MinimumHeightRequest="30" SearchButtonPressed="SearchBar_OnSearchButtonPressed"  HeightRequest="60"></SearchBar>
-        <!--<ListView x:Name="listView" ItemSelected="ListView_OnItemSelected" ItemTapped="ListView_OnItemTapped">-->
-        <ListView x:Name="listView" IsPullToRefreshEnabled="True" Refreshing="ListView_OnRefreshing" >
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                   <ViewCell>
-                       <StackLayout Orientation="Horizontal">
-                            <Image Source="{Binding UrlImage}"></Image>
-                            <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
-                                <Label Text="{Binding Nom}"></Label>
-                                <Label Text="{Binding Poste}"></Label>
+            <SearchBar x:Name="searchBar" MinimumHeightRequest="30" SearchButtonPressed="SearchBar_OnSearchButtonPressed"  HeightRequest="60"></SearchBar>
+            <!--<ListView x:Name="listView" ItemSelected="ListView_OnItemSelected" ItemTapped="ListView_OnItemTapped">-->
+            <ListView x:Name="listView" IsPullToRefreshEnabled="True" Refreshing="ListView_OnRefreshing" ItemTapped="ListView_OnItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding UrlImage}"></Image>
+                                <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                    <Label Text="{Binding Nom}"></Label>
+                                    <Label Text="{Binding Poste}"></Label>
+                                </StackLayout>
+                                <Button Text="Delete !"></Button>
                             </StackLayout>
-                            <Button Text="Delete !"></Button>
-</StackLayout>
-                       <ViewCell.ContextActions>
-                           <MenuItem Text="Delete" Clicked="MenuItem_OnClicked" CommandParameter="{Binding .}"></MenuItem>
-                       </ViewCell.ContextActions>
-                   </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Delete" Clicked="MenuItem_OnClicked" CommandParameter="{Binding .}"></MenuItem>
+                            </ViewCell.ContextActions>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
     </ContentPage.Content>

@@ -7,13 +7,17 @@ namespace MyFirstApplication
 {
 	public partial class App : Application
 	{
-		public App ()
+	    public const string TitleKey="Title" ;
+	    public const string NotificationEnabledKey= "NotificationEnabled";
+	    public string Title { get; set; }
+	    public bool NotificationEnabled { get; set; }
+        public App ()
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new AbsoluteLayoutPage()); 
-           
-		}
+			MainPage = new NavigationPage( new TableRootPage());
+
+        }
 
 		protected override void OnStart ()
 		{

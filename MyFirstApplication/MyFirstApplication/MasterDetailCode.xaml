@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyFirstApplication.MasterDetailCode">
+   
+        <MasterDetailPage.Master>
+            <ContentPage Title="Menu">
+                <StackLayout>
+                    <StackLayout HeightRequest="75" BackgroundColor="#3498db" >
+                        <Label Text="Menu" FontSize="25" HorizontalOptions="Center" Margin="20" VerticalOptions="Center" TextColor="White"/>
+                    </StackLayout>
+                    <ListView x:Name="menuList" SeparatorVisibility="None" ItemSelected="MenuList_OnItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid HeightRequest="30" Padding="3">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="{Binding IconSource}" Grid.Row="0" Grid.Column="0"></Image>
+                                        <Label Text="{Binding Title}" VerticalOptions="Center" Grid.Row="0" FontSize="16" Grid.Column="1"></Label>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+        </ContentPage>
+        </MasterDetailPage.Master>
+</MasterDetailPage>
