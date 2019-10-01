@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyFirstApplication.StylesExample">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="bgButton">Red</Color>
+            <x:Int32 x:Key="rad">20</x:Int32>
+            <Style x:Key="btn" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource bgButton}"></Setter>
+                <Setter Property="CornerRadius" Value="{StaticResource rad}"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+                <Setter Property="TextColor" Value="White"></Setter>
+            </Style>
+            </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Login" 
+                    Style="{StaticResource btn}"
+                    />
+            <Button Text="Register" 
+                    BackgroundColor="{StaticResource bgButton}" 
+                    TextColor="White" 
+                    CornerRadius="20" 
+                    FontAttributes="Bold" />
+            <Button Text="Click Me !" 
+                    BackgroundColor="{StaticResource bgButton}" 
+                    TextColor="White" 
+                    CornerRadius="{StaticResource rad}" 
+                    FontAttributes="Bold" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

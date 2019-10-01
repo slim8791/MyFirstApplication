@@ -6,8 +6,8 @@
         <TableView Intent="Form">
             <TableRoot>
                 <TableSection>
-                    <EntryCell x:Name="title" Text="{Binding Title}" Label="Title" Completed="OnChange"/>
-                    <SwitchCell x:Name="notificationsEnabled" Text="Notifications" On="{Binding NotificationsEnabled}" OnChanged="OnChange" />
+                    <EntryCell x:Name="title" Text="{Binding Title}" Label="Title" />
+                    <SwitchCell x:Name="notificationsEnabled" Text="Notifications" On="{Binding NotificationsEnabled}" OnChanged="notificationsEnabled_OnChanged" />
                 </TableSection>
             </TableRoot>
         </TableView>
