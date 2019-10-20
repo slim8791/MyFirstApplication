@@ -35,7 +35,8 @@ namespace MyFirstApplication
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new StylesExample());
+            MainPage = new NavigationPage(new RestfullPage());
+
 
         }
 
